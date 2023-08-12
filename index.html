@@ -315,63 +315,40 @@
       </div>
     </div>
 
-        <script>
-        // 读取 JSON 文件并生成卡片元素
-        fetch('json/jdprojects.json')
-          .then(response => response.json())
-          .then(data => {
-            // 循环遍历每一项数据并创建卡片元素
-            var cardGroups = Math.ceil(data.length / 5); // 总共需要的 card-group div 数量
-            var count = 0; // 记录已经创建的 card-group div 数量
-            var index = 0; // 记录当前卡片的索引
-            var cardGroup, cardContainer, card;
-    
-            while (count < cardGroups) {
-              // 创建 card-group div
-              cardGroup = document.createElement("div");
-              cardGroup.className = "card-group box-center";
-              cardContainer = document.getElementById("cardContainer");
-              cardContainer.appendChild(cardGroup);
-    
-              // 每个 card-group div 最多包含 5 个卡片
-              for (var i = 0; i < 5; i++) {
-                if (index >= data.length) break; // 确保不超出卡片的数量
-    
-                // 从 JSON 数据中获取属性值
-                var imgURL = data[index].img;
+    <script>
+      // 读取json文件
+      fetch('./json/exts.json')
+        .then(response => response.json())
+        .then(data => {
+          // 遍历每一项
+          data.forEach(extension => {
+            // 创建div元素
+            div = document.createElement('div');
+            div.className = 'extension';
 
-                // 创建div元素
-                const div = document.createElement('div');
-                div.className = 'extension';
+            // 创建内部元素结构
+            innerHTML = `
+              <div class="extension-banner">
+                <img loading="lazy" src="${extension.image}" class="extension-image" style="">
+                <div class="extension-buttons">
+                  <button class="copy" data-copy="${extension.url}">Copy URL</button>
+                  <a href="${extension.runUrl}" class="open">Open Extension</a>
+                </div>
+              </div>
+              <h3>${extension.name}</h3>
+              <p>${extension.description}</p>
+            `;
 
-                // 创建内部元素结构
-                const innerHTML = `
-                  <div class="extension-banner">
-                    <img loading="lazy" src="images/lab/text.svg" class="extension-image" style="">
-                    <div class="extension-buttons">
-                      <button class="copy" data-copy="https://extensions.turbowarp.org/lab/text.js">Copy URL</button>
-                      <a href="https://turbowarp.org/editor?extension=https://extensions.turbowarp.org/lab/text.js" class="open">Open Extension</a>
-                    </div>
-                  </div>
-                  <h3>Animated Text</h3>
-                  <p>An easy way to display and animate text. Compatible with Scratch Lab's Animated Text experiment.</p>
-                `;
+            // 设置div的innerHTML
+            div.innerHTML = innerHTML;
 
-                // 设置div的innerHTML
-                div.innerHTML = innerHTML;
+            // 将div插入到具有id为"exts"的容器中
+            container = document.querySelector('#exts');
+            container.appendChild(div);
+          });
+        })
+        .catch(error => console.error(error));
 
-                // 将div插入到具有id为"exts"的容器中
-                const container = document.querySelector('#exts');
-                container.appendChild(div);
-
-    
-                index++; // 更新卡片索引
-              }
-    
-              count++; // 更新 card-group div 计数
-            }
-          })
-          .catch(error => console.log(error));
     </script>
 
     <footer class="section">
