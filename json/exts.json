@@ -1,13 +1,13 @@
 [
   {
     "name": "扩展名称1",
-    "image": "images/lab/text.svg",
+    "image": "images/unknown.svg",
     "description": "这是扩展1的描述。",
     "url": "http://example.com/extension1"
   },
   {
     "name": "扩展名称2",
-    "image": "images/stretch.svg",
+    "image": "images/unknown.svg",
     "description": "这是扩展2的描述。",
     "url": "http://example.com/extension2"
   }
