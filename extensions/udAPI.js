@@ -44,7 +44,7 @@ class MyExtension {
     }
 
     API(args) {
-        const url = 'http://huangr.yue-neng.com/' + args.API + '?' + args.VAL;
+        const url = 'http://huangr.yue-neng.com/api/' + args.API + '?' + args.VAL;
 
         return fetch(url)
             .then(response => response.json())
@@ -62,7 +62,7 @@ class MyExtension {
             });
     }
     loginAPI(args) {
-        const url = 'http://huangr.yue-neng.com/login-api-yn.php?key=uDD000010&username=' + args.PARAM1 + '&password=' + args.PARAM2;
+        const url = 'http://huangr.yue-neng.com/api/login-api-yn.php?key=uDD000010&username=' + args.PARAM1 + '&password=' + args.PARAM2;
 
         return fetch(url)
             .then(response => response.json())
