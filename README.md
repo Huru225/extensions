@@ -1,7 +1,14 @@
 # TurboWarp 扩展库
 
 这个项目改编自Turbowarp扩展库。
-https://extensions.turbowarp.org/
+
+## 做了什么更新
+
+使用原生js开发，增删改查更便捷。
+
+## 在哪里访问？
+
+[网址](https://extensions.udbbs.top/)
 
 ## 捐助
 
