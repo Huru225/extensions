@@ -1,14 +1,13 @@
-# TurboWarp Extension Gallery
+# TurboWarp 扩展库
 
-User-contributed unsandboxed extension gallery for TurboWarp.
-
+这个项目改编自Turbowarp扩展库。
 https://extensions.turbowarp.org/
 
-## Contributing
+## 捐助
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+无需捐助。如果你真的想捐助，请捐助Turbowarp而不是Huru225
 
-## License
+## 协议（同Turbowarp）
 
 By default, files in this repository are licensed under the [MIT License](licenses/MIT.txt). However, there are exceptions. Files that are under a different license will have a license header at the top of their code or in an adjacent README file.
 
