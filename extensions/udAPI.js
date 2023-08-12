@@ -3,6 +3,7 @@ class MyExtension {
         return {
             id: 'udAPI',
             name: '畅议API',
+            docsURI: "https://extensions.udbbs.top/udAPI.html",
             color1: '#0e2b3d', // 1c
             color2: '#153f5a', // 2c
             color3: '#153f5a', // 3c
