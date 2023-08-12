@@ -3,14 +3,12 @@
     "name": "扩展名称1",
     "image": "images/lab/text.svg",
     "description": "这是扩展1的描述。",
-    "url": "http://example.com/extension1",
-    "runUrl": "http://example.com/run-extension1"
+    "url": "http://example.com/extension1"
   },
   {
     "name": "扩展名称2",
     "image": "images/stretch.svg",
     "description": "这是扩展2的描述。",
-    "url": "http://example.com/extension2",
-    "runUrl": "http://example.com/run-extension2"
+    "url": "http://example.com/extension2"
   }
 ]
