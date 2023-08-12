@@ -6,9 +6,9 @@
     "url": "https://extensions.udbbs.top/extensions/miniTools.js"
   },
   {
-    "name": "扩展名称2",
-    "image": "images/unknown.svg",
-    "description": "这是扩展2的描述。",
-    "url": "http://example.com/extension2"
+    "name": "畅议API",
+    "image": "images/udAPI.svg",
+    "description": "提供关于畅议API的块。由<a href=''>Huru225</a>创建。",
+    "url": "https://extensions.udbbs.top/extensions/udAPI.js"
   }
 ]
