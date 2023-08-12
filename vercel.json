@@ -1,13 +1,6 @@
 {
     "routes": [
         {
-            "src": "/undefined",
-            "status": 301,
-            "headers": {
-                "Location": "/"
-            }
-        },
-        {
             "handle": "filesystem"
         },
         {
