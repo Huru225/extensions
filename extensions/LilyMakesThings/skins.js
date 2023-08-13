@@ -26,8 +26,7 @@
     }
   });
 
-  const vm = Scratch.vm;
-  const runtime = vm.runtime;
+  const runtime = Scratch.vm.runtime;
   const renderer = runtime.renderer;
   const Cast = Scratch.Cast;
 
