@@ -10,5 +10,11 @@
     "image": "images/udAPI.svg",
     "description": "提供关于畅议API的块。由<a href=''>Huru225</a>创建。",
     "url": "https://extensions.udbbs.top/extensions/udAPI.js"
+  },
+  {
+    "name": "天气",
+    "image": "images/weather.svg",
+    "description": "访问实时天气信息。<b>最初</b>由<a href='https://khanning.github.io/scratch-weather-extension/'>Sayamindu Dasgupta, Kreg Hanning</a>创建。",
+    "url": "https://extensions.udbbs.top/extensions/weather.js"
   }
 ]
