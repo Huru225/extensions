@@ -1,18 +1,10 @@
 (function (Scratch) {
   'use strict';
 
-  const requireNonPackagedRuntime = (blockName) => {
-    if (Scratch.vm.runtime.isPackaged) {
-      alert(`To use the Skins ${blockName} block, the creator of the packaged project must uncheck "Remove raw asset data after loading to save RAM" under advanced settings in the packager.`);
-      return false;
-    }
-    return true;
-  };
-
   /**
    * @param {RenderWebGL.SVGSkin} svgSkin
    * @returns {Promise<void>}
-   */
+  */
   const svgSkinFinishedLoading = svgSkin => new Promise(resolve => {
     if (svgSkin._svgImageLoaded) {
       resolve();
@@ -328,8 +320,8 @@
       const attribute = Cast.toString(args.ATTRIBUTE).toLowerCase();
 
       switch (attribute) {
-        case ('width'): return Math.ceil(size[0]);
-        case ('height'): return Math.ceil(size[1]);
+        case ('宽度'): return Math.ceil(size[0]);
+        case ('高度'): return Math.ceil(size[1]);
         default: return 0;
       }
     }
