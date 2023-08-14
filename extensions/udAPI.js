@@ -51,6 +51,12 @@ class MyExtension {
                         PARAM2: {
                             type: Scratch.ArgumentType.STRING,
                             defaultValue: '123456'
+                        },
+                        KEY: {
+                            type: Scratch.ArgumentType.STRING
+                        },
+                        VAL: {
+                            type: Scratch.ArgumentType.STRING
                         }
                     }
                 }
