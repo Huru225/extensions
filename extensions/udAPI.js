@@ -59,6 +59,24 @@ class MyExtension {
                             type: Scratch.ArgumentType.STRING
                         }
                     }
+                },
+                {
+                    opcode: 'readAPI',
+                    blockType: Scratch.BlockType.REPORTER,
+                    text: '发送读取请求 账户: [PARAM1] 密码: [PARAM2] 键: [KEY]',
+                    arguments: {
+                        PARAM1: {
+                            type: Scratch.ArgumentType.STRING,
+                            defaultValue: 'test'
+                        },
+                        PARAM2: {
+                            type: Scratch.ArgumentType.STRING,
+                            defaultValue: '123456'
+                        },
+                        KEY: {
+                            type: Scratch.ArgumentType.STRING
+                        }
+                    }
                 }
             ]
         };
@@ -102,6 +120,24 @@ class MyExtension {
     }
     uploadAPI(args) {
         const url = 'http://huangr.yue-neng.com/api/upload-data-api-yn.php?key=uDD000010&username=' + args.PARAM1 + '&password=' + args.PARAM2 + '&json_key=' + args.KEY + '&json_val=' + args.VAL;
+
+        return fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    console.log('请求成功');
+                } else {
+                    console.log('请求失败: ' + data.message);
+                }
+                return JSON.stringify(data);
+            })
+            .catch(error => {
+                console.log('请求失败: ' + error.message);
+                return JSON.stringify(data);
+            });
+    }
+    readAPI(args) {
+        const url = 'http://huangr.yue-neng.com/api/read-data-api-yn.php?key=uDD000010&username=' + args.PARAM1 + '&password=' + args.PARAM2 + '&json_key=' + args.KEY;
 
         return fetch(url)
             .then(response => response.json())
