@@ -38,6 +38,21 @@ class MyExtension {
                             defaultValue: '123456'
                         }
                     }
+                },
+                {
+                    opcode: 'uploadAPI',
+                    blockType: Scratch.BlockType.REPORTER,
+                    text: '发送上传请求 账户: [PARAM1] 密码: [PARAM2] 键: [KEY] 值: [VAL]',
+                    arguments: {
+                        PARAM1: {
+                            type: Scratch.ArgumentType.STRING,
+                            defaultValue: 'test'
+                        },
+                        PARAM2: {
+                            type: Scratch.ArgumentType.STRING,
+                            defaultValue: '123456'
+                        }
+                    }
                 }
             ]
         };
@@ -63,6 +78,24 @@ class MyExtension {
     }
     loginAPI(args) {
         const url = 'http://huangr.yue-neng.com/api/login-api-yn.php?key=uDD000010&username=' + args.PARAM1 + '&password=' + args.PARAM2;
+
+        return fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    console.log('请求成功');
+                } else {
+                    console.log('请求失败: ' + data.message);
+                }
+                return JSON.stringify(data);
+            })
+            .catch(error => {
+                console.log('请求失败: ' + error.message);
+                return JSON.stringify(data);
+            });
+    }
+    uploadAPI(args) {
+        const url = 'http://huangr.yue-neng.com/api/upload-data-api-yn.php?key=uDD000010&username=' + args.PARAM1 + '&password=' + args.PARAM2 + '&json_key=' + args.KEY + '&json_val=' + args.VAL;
 
         return fetch(url)
             .then(response => response.json())
